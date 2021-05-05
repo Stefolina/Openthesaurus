@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=DM+Serif+Text&family=Unica+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varta:wght@300&display=swap" rel="stylesheet">
     <title>Openthesaurus</title>
 
     <script>
@@ -34,13 +40,89 @@
             }
         }
     </script>
+
+    <style>
+        body {
+            background-image: url(img/bg.jpeg);
+            background-position: top;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 40px;
+        }
+
+        .header {
+            font-family: 'Unica One', cursive;
+            margin-bottom: 30px;
+        }
+
+        .text {
+            font-family: 'Varta', sans-serif;
+        }
+
+        .button {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            cursor: pointer;
+            transition: all ease-in-out 225ms;
+            border-radius: 50%;
+        }
+
+        .button:hover {
+            background-color: rgb(221, 219, 219);
+            transform: scale(1.1);
+        }
+
+        .icon {
+            width: 35px;
+            height: 35px;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        input {
+            width: 210px;
+            height: 35px;
+            margin-bottom: 30px;
+            font-family: 'East Sea Dokdo', cursive;
+            font-size: 50px;
+            border: none;
+            background-color: rgb(233, 233, 233);
+        }
+
+        .secondSection {
+            display: flex;
+            margin-top: 30px;
+            padding: 20px;
+            justify-content: center;
+            flex-direction: column;
+            font-family: 'Varta', sans-serif;
+            background-color: rgb(233, 233, 233);
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
-    <input type='text' id="searchQuery">
+    <h1 class="header">Openthesaurus</h1>
 
-    <button onclick="getSynonyms()">Get Synonyms</button>
+    <h3 class="text">Finde Synonyme für dein gewähltes Wort!</h3>
+    
+    <div class="firstSection">
+        <input type='text' id="searchQuery">
+        <button class="button" onclick="getSynonyms()"><img class="icon" src="img/searching.svg"></button>
+    </div>
 
-    <div id="container"></div>
+    <div class="secondSection" id="container">
+        Noch kein Wort ausgewählt
+    </div>
     
 </body>
 </html>
